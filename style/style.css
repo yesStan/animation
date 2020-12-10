@@ -1,0 +1,440 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text {
+  font-size: 30px;
+}
+
+.text__special {
+  font-weight: 200;
+  font-size: 30px;
+  font-family: 'Chelsea Market', cursive;
+}
+
+.many-text {
+  display: none;
+  margin-top: 40px;
+  font-size: 25px;
+}
+
+.animation {
+  position: relative;
+}
+
+.animation .word {
+  position: absolute;
+  top: 25%;
+  left: 41%;
+  font-size: 40px;
+  opacity: 0;
+  color: blue;
+  animation: animate__zoomInDown;
+  animation-iteration-count: infinite;
+  animation-name: anim;
+  animation-duration: 12s;
+  /*calculate the exact time for looping*/
+  animation-delay: 3s;
+}
+
+.animation .word:nth-child(2) {
+  animation-delay: 6s;
+  color: red;
+}
+
+.animation .word:nth-child(3) {
+  animation-delay: 9s;
+}
+
+.animation .word:nth-child(4) {
+  animation-delay: 12s;
+  color: red;
+}
+
+.animation .word:nth-child(5) {
+  animation-delay: 15s;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  6.66% {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  46.66% {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  /*we give long pause after animation is done by this method*/
+}
+
+#icon {
+  display: none;
+}
+
+.section__icons {
+  position: relative;
+}
+
+.section__icons .icon1 {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  max-width: 300px;
+  max-height: 250px;
+  object-fit: cover;
+  animation-duration: 4s;
+  transform: rotate(-45deg);
+  /* Equal to rotateZ(45deg) */
+}
+
+.section__icons .icon2 {
+  position: absolute;
+  top: 52px;
+  right: 18%;
+  max-width: 350px;
+  max-height: 165px;
+  object-fit: cover;
+  transform: rotate(-25deg);
+  animation-duration: 3s;
+}
+
+.section__icons .icon3 {
+  position: absolute;
+  top: 39px;
+  left: 40%;
+  max-width: 190px;
+  max-height: 180px;
+  object-fit: cover;
+  transform: rotate(45deg);
+  /* Equal to rotateZ(45deg) */
+  animation-duration: 2s;
+}
+
+.section__icons .icon4 {
+  transform: rotate(-25deg);
+  position: absolute;
+  top: 172px;
+  left: 48%;
+  max-width: 280px;
+  max-height: 160px;
+  object-fit: cover;
+  /* Equal to rotateZ(45deg) */
+  animation-duration: 4s;
+}
+
+.section__icons .icon5 {
+  position: absolute;
+  top: 200px;
+  left: 30%;
+  max-width: 250px;
+  max-height: 200px;
+  object-fit: cover;
+  animation-duration: 2s;
+}
+
+#many {
+  animation-duration: 2s;
+  animation-delay: 2s;
+}
+
+.force {
+  animation-name: fadeOutUpBig;
+  animation-duration: 0.1s;
+  opacity: 0;
+}
+
+@keyframes fadeOutUpBig {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
+.move {
+  animation-name: moveUp;
+  display: none;
+}
+
+@keyframes moveUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2020px, 0);
+  }
+}
+
+.dont {
+  display: none;
+}
+
+#slogan {
+  text-align: center;
+  font-size: 30px;
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 9%;
+  transform: translate(-50%, -50%);
+  animation-duration: 2s;
+}
+
+.have {
+  text-align: center;
+  font-size: 30px;
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  animation-duration: 4s;
+}
+
+.remove {
+  animation-name: fadeOutLeft;
+  animation-duration: 2s;
+  opacity: 0;
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes backOutLeft {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+
+.cross {
+  position: relative;
+  display: none;
+}
+
+.cross .crest-img {
+  position: absolute;
+  top: 20px;
+  left: 21%;
+  max-width: 150px;
+  max-height: 150px;
+  animation-duration: 2s;
+}
+
+.cross .crest-img2 {
+  position: absolute;
+  top: 36px;
+  right: 19%;
+  max-width: 200px;
+  max-height: 200px;
+  animation-duration: 2s;
+}
+
+.cross .crest-img3 {
+  position: absolute;
+  top: 61px;
+  left: 45%;
+  max-width: 120px;
+  max-height: 120px;
+  animation-duration: 2s;
+}
+
+.cross .crest-img4 {
+  position: absolute;
+  top: 206px;
+  left: 50%;
+  max-width: 131px;
+  max-height: 203px;
+  animation-duration: 2s;
+}
+
+.cross .crest-img5 {
+  position: absolute;
+  top: 215px;
+  left: 33%;
+  max-width: 150px;
+  max-height: 171px;
+  animation-duration: 2s;
+}
+
+#logo {
+  display: none;
+}
+
+#logo .image__lrn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  padding-top: 20px;
+}
+
+#logo2 {
+  display: none;
+  position: relative;
+  animation-duration: 2s;
+}
+
+.logo2 {
+  position: relative;
+}
+
+.logo2 .image__text {
+  text-align: center;
+  font-size: 30px;
+  line-height: 93px;
+}
+
+.logo2 .balanced {
+  text-align: center;
+  font-size: 30px;
+  line-height: 93px;
+  animation-duration: 2s;
+  animation-delay: 3.5s;
+}
+
+.logo2 .balance-animation {
+  position: relative;
+  animation-delay: 2s;
+}
+
+.logo2 .balance-animation .bal {
+  position: absolute;
+  top: -115px;
+  left: 39%;
+  font-size: 40px;
+  opacity: 0;
+  color: blue;
+  animation: animate__zoomInDown;
+  animation-iteration-count: infinite;
+  animation-name: anim;
+  animation-duration: 12s;
+  /*calculate the exact time for looping*/
+}
+
+.logo2 .balance-animation .bal:nth-child(2) {
+  animation-delay: 3s;
+  position: absolute;
+  left: 41%;
+  color: red;
+}
+
+.logo2 .balance-animation .bal:nth-child(3) {
+  animation-delay: 6s;
+  position: absolute;
+  left: 39%;
+}
+
+.logo2 .balance-animation .bal:nth-child(4) {
+  animation-delay: 9s;
+  position: absolute;
+  left: 42%;
+  color: red;
+}
+
+.logo2 .balance-animation .bal:nth-child(5) {
+  animation-delay: 12s;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  6.66% {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  46.66% {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  /*we give long pause after animation is done by this method*/
+}
+
+.owl {
+  position: relative;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+  display: block;
+  animation-delay: 3s;
+}
+
+#bubble {
+  animation-delay: 9s;
+  display: block;
+  position: absolute;
+  left: 56%;
+  top: 30%;
+  max-width: 200px;
+  max-height: 150px;
+}
+
+.disappear {
+  animation-delay: 3s;
+}
+/*# sourceMappingURL=style.css.map */
